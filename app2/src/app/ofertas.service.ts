@@ -1,8 +1,9 @@
 
-import { Oferta } from './shared/ofertas.model';
+import { Oferta } from './shared/oferta.model';
+
 export class OfertasService {
 
-  public ofertas: Oferta[] = [
+  public ofertas: Array<Oferta> = [
       {
         id: 1,
         categoria: "restaurante",
