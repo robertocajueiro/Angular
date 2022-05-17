@@ -65,7 +65,12 @@ export class OfertasService {
       /* algum tipo de processamento, que ao finalizar, chama a funcao
       resolve ou reject */
       console.log('Será que passou por aqui?')
-      resolve(this.ofertas)
+      let deu_certo = false
+      if(deu_certo) {
+        resolve(this.ofertas)
+      } else {
+        reject({codigo_erro: 404, mensagem_erro: 'Servidor não encontrado'})
+      }
     })
   }
 }
