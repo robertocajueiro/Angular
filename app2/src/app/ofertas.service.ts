@@ -65,12 +65,23 @@ export class OfertasService {
       /* algum tipo de processamento, que ao finalizar, chama a funcao
       resolve ou reject */
       console.log('Será que passou por aqui?')
-      let deu_certo = false
+      let deu_certo = true
       if(deu_certo) {
-        resolve(this.ofertas)
+        setTimeout (() => resolve(this.ofertas), 3000)
       } else {
         reject({codigo_erro: 404, mensagem_erro: 'Servidor não encontrado'})
       }
+    })
+    .then(( ofertas: Oferta[]) => {
+      // fazer alguma tratativa
+      console.log('primeiro then')
+      return ofertas
+
+    })
+    .then((ofertas: Oferta[]) => {
+      // fazer uma outra tratativa
+      console.log('segundo then')
+      return ofertas
     })
   }
 }
